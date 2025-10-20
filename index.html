@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNG Assignment profile-card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <article class="profile-card" data-testid="test-profile-card">
+            <header class="profile-header">
+                <div class="profile-top">
+                    <figure class="avatar-container">
+                        <img 
+                            src="https://i.ibb.co/nqjGQV4r/Image.png">
+                            alt="Nabila Sani profile picture" 
+                            class="avatar"
+                            data-testid="test-user-avatar"
+                        >
+                        <figcaption>Profile Picture</figcaption>
+                    </figure>
+                    
+                    <div class="profile-info">
+                        <h1 class="user-name" data-testid="test-user-name">Nabila Sani</h1>
+                        <p class="user-bio" data-testid="test-user-bio">
+                        Frontend developer passionate about building responsive,  and accessible web applications. I specialize in transforming complex problems into intuitive user experiences using modern JavaScript, React, and a keen eye for detail.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="time-display">
+                    <strong>Current time (ms):</strong> 
+                    <span data-testid="test-user-time" id="current-time">0</span>
+                </div>
+            </header>
+            <hr class="divider">
+            <nav class="social-links">
+                <h2>X (Twitter) LinkedIn GitHub</h2>
+                <ul data-testid="test-user-social-links">
+                    <li>
+                        <a 
+                            href="https://twitter.com/trevorjustus" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            data-testid="test-user-social-twitter"
+                        >
+                            X (Twitter)
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            href="https://linkedin.com/in/trevorjustus" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            data-testid="test-user-social-linkedin"
+                        >
+                            LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            href="https://github.com/Nabeelahh" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            data-testid="test-user-social-github"
+                        >
+                            GitHub
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <section class="hobbies-section">
+                <h3>Hobbies</h3>
+                <ul data-testid="test-user-hobbies">
+                    <li>Watching Movies</li>
+                    <li>Playing Chess</li>
+                    <li>Traveling</li>
+                    <li>Reading Novels</li>
+                </ul>
+            </section>
+
+            <section class="dislikes-section">
+                <h3>Dislikes</h3>
+                <ul data-testid="test-user-dislikes">
+                    <li>Bugs in code</li>
+                    <li>Loud Noise</li>
+                    <li>Dishonesty</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+        <script>
+        function updateCurrentTime() {
+            const timeElement = document.querySelector('[data-testid="test-user-time"]');
+            if (timeElement) {
+                timeElement.textContent = Date.now();
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCurrentTime();
+            setInterval(updateCurrentTime, 1000);
+        });
+    </script>
+</body>
+</html>
